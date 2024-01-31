@@ -15,9 +15,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("Constants")]
     public float gravity = 9.8f;
     public float drag = 0.5f;
+    public float dragAir = 0.1f;
+    public float dragThreshold = 0.001f;
+
 
     [Header("Player Movement")]
+    public bool isGrounded = false;
     public float speed = 5.0f;
+    public float maxSpeed = 10.0f;
     public float xSpeed = 0.0f;
     public float ySpeed = 0.0f;
 
@@ -30,7 +35,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position += new Vector3(xSpeed, ySpeed, 0);
+        OnMovement(movementInput);
+
+        gameObject.GetComponent<CharacterController>().Move(new Vector3(xSpeed, ySpeed, 0));
     }
 
     void LateUpdate()
@@ -44,11 +51,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         xSpeed *= drag;
+
+        if (xSpeed < dragThreshold && xSpeed > -dragThreshold) {
+            xSpeed = 0.0f;
+        }
     }
 
-    public void OnMovement(InputAction.CallbackContext context)
+    public void OnMovement(InputAction context)
     {
-
         float movement = context.ReadValue<float>();
         xSpeed += movement * Time.deltaTime * speed;
     }
@@ -59,8 +69,6 @@ public class PlayerMovement : MonoBehaviour
         jumpInput.Enable();
         zipInput.Enable();
         swingInput.Enable();
-
-        movementInput.performed += OnMovement;
     }
 
     void OnDisable()
@@ -69,7 +77,5 @@ public class PlayerMovement : MonoBehaviour
         jumpInput.Disable();
         zipInput.Disable();
         swingInput.Disable();
-
-        movementInput.performed -= OnMovement;
     }
 }
