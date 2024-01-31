@@ -9,10 +9,11 @@
 - *if there's enough time,* moving and hitting the S key will slide
 
 ## Inspiration
-After playing all of Insomniac's Spiderman series, I decided I was going to try to mimic the [web swinging](https://www.youtube.com/watch?v=YpJRWbUCTJg) on a 2D scale. 
-![image](https://github.com/mmhamman/RoleAnalysis1/assets/89564033/3d4e0ade-efc1-4d87-869a-3cb775a45f98)
+![Spiderman webswinging](https://github.com/mmhamman/RoleAnalysis1/assets/89564033/3d4e0ade-efc1-4d87-869a-3cb775a45f98)
 
-I also am not fully recreating Spiderman and all of his abilities, just the ability to move on a 2-dimensional plane, zip to a point 
+After playing all of Insomniac's Spiderman series, I decided I was going to try to mimic the [web swinging](https://www.youtube.com/watch?v=YpJRWbUCTJg) on a 2D scale. 
+
+I also am not fully recreating Spiderman and all of his abilities, just the ability to move on a 2-dimensional plane, zip to a point, and swing from a point.
 
 ## Biggest challenge
 One of the biggest challenges I foresee is that finding out which point is closest to the mouse at any given point is going to be quite an expensive operation for Unity. I also am unsure of how to create the zipping or swinging mechanics from a physics perspective which I need more research into. Other than that, I don't see an issue.
