@@ -168,6 +168,94 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240358ef35f3d48bdab91f162575d912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementInput:
+    m_Name: Movement Input
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: b22ce572-df98-4afb-9f66-0ff1ac29c332
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: HorizontalMovementWASD
+      m_Id: ce3231e3-d1ab-4181-8c94-df6cf95847a0
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Input
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: ea08bb48-aaa7-495f-8c5f-5f451196d1c6
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Input
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 19db3a80-43d1-417a-b998-1bf2d10f1160
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Input
+      m_Flags: 8
+    - m_Name: HorizontalMovementArrow
+      m_Id: a865b099-5ce3-4f2e-a3b8-1e57b7dc28bb
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Input
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 8d5801dd-077d-4998-94ea-c2463fd70cb1
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Input
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: b83c3729-98a3-4acf-a506-2fce97ce20da
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Input
+      m_Flags: 8
+    m_Flags: 0
+  jumpInput:
+    m_Name: Jump Input
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: db47a34b-867a-4f05-a9ca-733405209d1a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  zipInput:
+    m_Name: Zip Input
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 1dee0779-6b4a-478b-a652-6c4b4d09a8c7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  swingInput:
+    m_Name: Swing Input
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: daa3cf8f-12cb-492d-aa87-f06f2a2d4251
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  gravity: 9.8
+  speed: 5
+  xSpeed: 0
+  ySpeed: 0
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
