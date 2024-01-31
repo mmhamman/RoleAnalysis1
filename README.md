@@ -9,13 +9,19 @@
 - *if there's enough time,* moving and hitting the S key will slide
 
 ## Inspiration
-After playing all of Insomniac's Spiderman series, I decided I was going to try to mimic the web swinging on a 2D scale.
+After playing all of Insomniac's Spiderman series, I decided I was going to try to mimic the [web swinging](https://www.youtube.com/watch?v=YpJRWbUCTJg) on a 2D scale. 
+![image](https://github.com/mmhamman/RoleAnalysis1/assets/89564033/3d4e0ade-efc1-4d87-869a-3cb775a45f98)
+
+I also am not fully recreating Spiderman and all of his abilities, just the ability to move on a 2-dimensional plane, zip to a point 
 
 ## Biggest challenge
 One of the biggest challenges I foresee is that finding out which point is closest to the mouse at any given point is going to be quite an expensive operation for Unity. I also am unsure of how to create the zipping or swinging mechanics from a physics perspective which I need more research into. Other than that, I don't see an issue.
 
 ## Algorithm at a Glance
 Essentially, the mouse will have a game object with a collider connected to it. When it collides with any point, the mouse will send that data to the player. That way, only the closest points ever get evaluated. To calculate these distances, raycasts will be sent out and their lengths will be saved, that way we can determine if it's close enough for the player to even grapple. From there, it's just basic physics programming!
+
+## A Note about the Devlogs
+They are all going to contain links to commits in this project. The intention is that full updates to the game will be noted here; otherwise, my commits are just for saving so they might not fully articulate all work that was changed but may just be a brief few words to remind myself what was changed.
 
 # Devlogs
 ### [Update 1](https://github.com/mmhamman/RoleAnalysis1/commit/010cfc474ccccb19d9a19a5a9232463a741d5ddc) Created Unity Project and background
