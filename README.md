@@ -21,10 +21,18 @@ One of the biggest challenges I foresee is that finding out which point is close
 ## Algorithm at a Glance
 Essentially, the mouse will have a game object with a collider connected to it. When it collides with any point, the mouse will send that data to the player. That way, only the closest points ever get evaluated. To calculate these distances, raycasts will be sent out and their lengths will be saved, that way we can determine if it's close enough for the player to even grapple. From there, it's just basic physics programming!
 
-## A Note about the Devlogs
-They are all going to contain links to commits in this project. The intention is that full updates to the game will be noted here; otherwise, my commits are just for saving so they might not fully articulate all work that was changed but may just be a brief few words to remind myself what was changed.
+------
 
 # Devlogs
+## A Note about the Devlogs
+- They are all going to contain links to commits in this project. The intention is that full updates to the game will be noted here; otherwise, my commits are just for saving so they might not fully articulate all work that was changed but may just be a brief few words to remind myself what was changed.
+
 ### [Update 1](https://github.com/mmhamman/RoleAnalysis1/commit/010cfc474ccccb19d9a19a5a9232463a741d5ddc) Created Unity Project and background
 - Not much progress except Ideation offline and creating a general template. There really isn't much else to say.
 ---
+### [Update 2](https://github.com/mmhamman/RoleAnalysis1/commit/dd7d064eb206f49d8d4d5d87bbe82c29e34d164d) Left and Right Movement Complete
+- Player can now move left and right with either the A and D keys or left and right arrows. Drag and acceleration have been fully applied as well when on ground.
+- There are a few bugs but it's mostly with drag and how it may be achieving the correct effect but it's not achieving said effect the correct way
+---
+### [Update 3](https://github.com/mmhamman/RoleAnalysis1/commit/bc98fdbd1d83c3bc8db82768657a5ef6b494f6b9) Drag Bug Fixes and Turning Velocity Implemented
+- There was no set behavior for if the player was moving and then abruptly turned and so now whenever the player is moving in one direction and wishes to move to the next, the player velocity will be reset to 0.
