@@ -14,18 +14,20 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Constants")]
     public float gravity = 9.8f;
+    public float speed = 5.0f;
     public float maxSpeed = 10.0f;
     public float maxVelocity = 1.0f;
-    public float acceleration = 0.5f;
-    public float drag = 0.5f;
+    public float acceleration = 0.001f;
+    public float deceleration = 0.1f;
+    public float drag = 0.005f;
     public float dragAir = 0.1f;
 
 
     [Header("Player Movement")]
     public bool isMoving = false;
     public bool isGrounded = false;
-    public float xSpeedOnLastFrame = 0.0f;
-    public float speed = 5.0f;
+    public bool isTurning = false;
+    public float xPositionLastFrame = 0.0f; // player input NOT xSpeed
     public float velocity = 0.0f;
     public float xSpeed = 0.0f;
     public float ySpeed = 0.0f;
@@ -39,6 +41,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (isTurning) { velocity = 0.0f; }
+
         OnMovement();
 
         // applying gravity
@@ -67,7 +72,9 @@ public class PlayerMovement : MonoBehaviour
 
     void LateUpdate()
     {
-        xSpeedOnLastFrame = xSpeed;
+        xPositionLastFrame = gameObject.transform.position.x;
+
+        if (velocity < 0.01f) { velocity = 0.0f; }
     }
 
     public void OnMovement()
@@ -82,6 +89,20 @@ public class PlayerMovement : MonoBehaviour
         {
             isMoving = false;
         }
+        
+        // detecting if the player is turning
+        if (movement > 0 && xSpeed < 0 && velocity > 0.5f)
+        {
+            isTurning = true;
+        }
+        else if (movement < 0 && xSpeed > 0 && velocity > 0.5f)
+        {
+            isTurning = true;
+        }
+        else
+        {
+            isTurning = false;
+        }
 
         xSpeed += movement * speed;
 
@@ -92,7 +113,8 @@ public class PlayerMovement : MonoBehaviour
             xSpeed = -maxSpeed;
         }
 
-        Debug.Log("Movement: " + xSpeed);
+        // rounding to 4 decimal places
+        xSpeed = Mathf.Round(xSpeed * 10000f) / 10000f;
     }
 
     public void ApplyDrag(float drag)
@@ -103,8 +125,11 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        // applying drag
+        // decelerating velocity by applying drag
         velocity = Mathf.Lerp(velocity, 0.0f, drag);
+
+        // applying velocity on decelleration
+        xSpeed = Mathf.Lerp(xSpeed, 0.0f, deceleration);
     }
 
     void OnEnable()
