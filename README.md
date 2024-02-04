@@ -1,6 +1,8 @@
 # RoleAnalysis1
 *A project around creating a movement system in Unity and C#. The theme is Spiderman like movement, only in 2D.*
 
+*[To skip to devlogs, click here!](https://github.com/mmhamman/RoleAnalysis1/blob/main/README.md#devlogs)*
+
 ## Controls, *subject to change!*
 - A and D keys for left and right movement
 - W and Space for jump
