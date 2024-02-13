@@ -38,3 +38,7 @@ Essentially, the mouse will have a game object with a collider connected to it. 
 ---
 ### [Update 3](https://github.com/mmhamman/RoleAnalysis1/commit/bc98fdbd1d83c3bc8db82768657a5ef6b494f6b9) Drag Bug Fixes and Turning Velocity Implemented
 - There was no set behavior for if the player was moving and then abruptly turned and so now whenever the player is moving in one direction and wishes to move to the next, the player velocity will be reset to 0.
+---
+### [Update 4](https://github.com/mmhamman/RoleAnalysis1/commit/28cbb42763bc62eba77c90ac178fbf31d50a6e34) Added smooth camera tracking
+- There was no camera tracking before hand but now the player can move and get followed by the camera. This was achieved by adding 2 offsets. A Y offset so the player can look up to see pegs to zip to and an x offset to look ahead of the player dependant on how fast the player is moving.
+- The equation I used for camera position is a simple calculus problem where the x position is equal to the position of the player divided by the derivative of the horizontal speed of the player.
