@@ -235,7 +235,15 @@ MonoBehaviour:
     m_Id: db47a34b-867a-4f05-a9ca-733405209d1a
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 34e27792-0130-4991-b30a-4cd8e37efa6a
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump Input
+      m_Flags: 0
     m_Flags: 0
   zipInput:
     m_Name: Zip Input
@@ -244,7 +252,15 @@ MonoBehaviour:
     m_Id: 1dee0779-6b4a-478b-a652-6c4b4d09a8c7
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ca74eb05-1347-4bf7-adf9-2a6f5d5558bf
+      m_Path: <Mouse>/rightButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Zip Input
+      m_Flags: 0
     m_Flags: 0
   swingInput:
     m_Name: Swing Input
@@ -253,7 +269,15 @@ MonoBehaviour:
     m_Id: daa3cf8f-12cb-492d-aa87-f06f2a2d4251
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a659ca50-dc69-412e-9587-95900f257077
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Swing Input
+      m_Flags: 0
     m_Flags: 0
   gravity: 9.8
   speed: 5

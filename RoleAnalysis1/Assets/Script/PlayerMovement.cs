@@ -38,6 +38,17 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    void EarlyUpdate()
+    {
+
+        raycastHit
+
+        if (isGrounded)
+        {
+            ySpeed = 0.0f;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
